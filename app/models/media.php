@@ -3,8 +3,8 @@
 
         function evaluateContent($content){
             $contentArray = explode(" ", $content);
-            for($i=0; $i++; $i<count($contentArray){
-                $this->Concept->find($contentArray[$i])
+            for($i=0; $i++; $i<count($contentArray)){
+                $this->Concept->find($contentArray[$i]);
             }
         }
 
