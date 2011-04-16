@@ -1,8 +1,6 @@
 <?php
 class MediaController extends AppController {
 
-
-
 	function dashboard () {
     $positiveWords= array('adaptable', 'Admiration', 'Adorable', 'Affectionate', 'Alive','Anticipate','Appreciated', 'Awe','Bold', 'Bonding',
     'Brilliant', 'Caring', 'Cautious', 'Cheerful', 'Clever', 'Cognizant','Comical', 'Compassionate','Content', 'Cool', 'Coping', 'Cordial',
@@ -28,21 +26,46 @@ $negativeWords = array('Abandonment', 'Addictive', 'Aggravate', 'Aggressive', 'A
 'Uncertain', 'Unhappy','Vindictive', 'Violent',  'Vociferous', 'Wary', 'Weary', 'Wicked', 'Worrier', 'Wrath');
 
         $content = $this->Media->find('all',array('fields' => array('Media.id', 'Media.content')));
-        $count = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-        for($n=0; $n<count($content); $n++){
-            $emotions = $positiveWords;
-            $contentArray = explode(" ", $content[$n]['Media']['content']);
-            for($i=0;$i<count($contentArray);$i++){
-                $j=0;
-                while($j<count($emotions)){
-                    if($emotions[$j] = $contentArray[$i]){
-                        $count[$j]++;
+        $lists = array($positiveWords, $negativeWords);
+        for($l=0; $l<count($lists);$l++){
+            $emotions = $lists[$l];
+            for($n=0; $n<count($content); $n++){
+                $frequency = array(
+                    array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+                    array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+                );
+                $contentArray = explode(" ", $content[$n]['Media']['content']);
+                for($i=0;$i<count($contentArray);$i++){
+                    $j=0;
+                    while($j<count($emotions)){
+                        if(strtolower($emotions[$j]) == strtolower($contentArray[$i])){
+                            $frequency[$l][$j]++;
+                        }
+                        $j++;
                     }
-                    $j++;
                 }
+                $max=0;
+                $posOrNeg = -1;
+                $maxIndex = -1;
+                for($ll=0; $ll<count($frequency);$ll++){
+                    for($i=0;$i<count($frequency[$ll]);$i++){
+$this->log($ll.": ".$i.": ".$frequency[$ll][$i]);
+                        if($frequency[$ll][$i] > $max){
+                            $posOrNeg = $ll;
+                            $maxIndex = $i;
+                        }
+                    }
+                }
+                if($max > 0){
+                    $result=array('Media'=>array(
+                                        'id'=>$content[$n]['Media']['id'],
+                                        'posorneg'=>$posOrNeg,
+                                        'word'=>$lists[$posOrNeg][$max]
+                                    ));
+$this->log($result);
+                }
+
             }
         }
-        $this->log($count);
-	}
-
+    }
 }
