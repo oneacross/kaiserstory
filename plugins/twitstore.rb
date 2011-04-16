@@ -2,4 +2,4 @@
 
 require 'mysql'
 
-conn = Mysql.new('localhost', 'mpmendell', 'matt')
+conn = Mysql.new('localhost', 'mmendell', 'kaiser')
