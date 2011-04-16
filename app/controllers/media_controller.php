@@ -28,17 +28,23 @@ $negativeWords = array('Abandonment', 'Addictive', 'Aggravate', 'Aggressive', 'A
 'Uncertain', 'Unhappy','Vindictive', 'Violent',  'Vociferous', 'Wary', 'Weary', 'Wicked', 'Worrier', 'Wrath');
 
         $content = $this->Media->find('all',array('fields' => array('Media.id', 'Media.content')));
-        $count = array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0);
-        for($n=0; $n<count($content); $n++){
-            $emotions = $positiveWords;
-            $contentArray = explode(" ", $content[$n]['Media']['content']);
-            for($i=0;$i<count($contentArray);$i++){
-                $j=0;
-                while($j<count($emotions)){
-                    if($emotions[$j] = $contentArray[$i]){
-                        $count[$j]++;
+        $count = array(
+            array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0),
+            array(0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0)
+            );
+        $lists = array($positiveWords, $negativeWords);
+        for($l=0; $l<count($lists);$l++){
+            $emotions = $lists[$l];
+            for($n=0; $n<count($content); $n++){
+                $contentArray = explode(" ", $content[$n]['Media']['content']);
+                for($i=0;$i<count($contentArray);$i++){
+                    $j=0;
+                    while($j<count($emotions)){
+                        if(strtolower($emotions[$j]) == strtolower($contentArray[$i])){
+                            $count[$l][$j]++;
+                        }
+                        $j++;
                     }
-                    $j++;
                 }
             }
         }
