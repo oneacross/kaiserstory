@@ -5,5 +5,5 @@ kw=$1
 
 echo "track=$kw" > tracking
 
-filename="twitraw/${kw}_$(date +'%b_%d_%Y_%H_%M_%S').txt"
+filename="twitraw/$(date +'%b_%d_%Y_%H_%M_%S').txt"
 curl -o $filename -d @tracking http://stream.twitter.com/1/statuses/filter.json -umpmendell:sanjose
