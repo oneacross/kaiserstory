@@ -5,7 +5,7 @@ role varchar(400),
 party varchar(400)
 );
 
-CREATE table  medias (
+CREATE table  media (
   id int not null primary key auto_increment,
   newssource varchar(400),
   newsdate date,
