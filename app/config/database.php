@@ -78,8 +78,8 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'pastel',
-		'database' => 'keiserstory',
+		'password' => 'VeronDario.',
+		'database' => 'kaiserstory',
 		'prefix' => '',
 	);
 
