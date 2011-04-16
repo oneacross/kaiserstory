@@ -5,6 +5,7 @@
 [core]
    pager = less
    editor = vim
+   ignorecase = true
 
 [color]
    ui = auto
