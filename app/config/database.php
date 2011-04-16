@@ -79,7 +79,7 @@ class DATABASE_CONFIG {
 		'host' => 'localhost',
 		'login' => 'root',
 		'password' => 'pastel',
-		'database' => 'keiserstory',
+		'database' => 'kaiserstory',
 		'prefix' => '',
 	);
 

@@ -1,6 +1,4 @@
 <?php
-
-class Politician extends AppModel {
-      var $name = 'Politician';
-}
+    class Politician extends AppModel {
+    }
 ?>
