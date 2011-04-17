@@ -22,7 +22,7 @@ File.open(filename).each { |line|
     location = conn.quote(tweet['location'])
 
     # newssource newsdate content location politician_name
-    conn.query("insert into medias (newssource, newsdate, content, location, politician_name) " +
+    conn.query("insert into media (newssource, newsdate, content, location, politician_name) " +
                "values (\"#{media}\", \"April 2011\", \"#{text}\", \"#{location}\", \"#{kw}\")")
 }
 
