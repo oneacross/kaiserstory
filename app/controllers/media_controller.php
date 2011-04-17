@@ -8,18 +8,15 @@ class MediaController extends AppController {
         $neuObama =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Obama', 'Media.posorneg' => '-1')));
 
         $this->set($Obama=array('percentage'=>
-                                    array('positive'=> $posObama/$totalObama;
-                                          'negative'=> $negObama/$totalObama;
-                                          'neutral'=> $neuObama/$totalObama;
-                                    )
+                                    array('positive'=> $posObama/$totalObama,
+                                          'negative'=> $negObama/$totalObama,
+                                          'neutral'=> $neuObama/$totalObama
+                                    )/*
                                 'words'=>
                                     array('positive' => array(word1=>freq1, word2=>freq2),
                                           'negative' => array(word1=>freq1, word2=>freq2)
-                                    )
+                                    )*/
                                 )
-
-
-        positivas(palabra0>frecuencia))
-        $this->set($Bachmann)*/
+                );
     }
 }
