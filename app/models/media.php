@@ -63,7 +63,7 @@ class Media extends AppModel {
                 $result=array('Media'=>array(
                                     'id'=>$content[$n]['Media']['id'],
                                     'posorneg'=>$posOrNeg,
-                                    'word'=>$lists[$posOrNeg][$max]
+                                    'word'=>$lists[$posOrNeg][$maxIndex]
                                 ));
                 $this->save($result);
             }

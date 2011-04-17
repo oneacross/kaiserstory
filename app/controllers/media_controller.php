@@ -76,8 +76,10 @@ class MediaController extends AppController {
                                         )
                     );
 
+        $this->log($Obama);
         $this->set('Obama',$Obama);
 
+        $this->log($Bachmann);
         $this->set('Bachmann',$Bachmann);
     }
 }
