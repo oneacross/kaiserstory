@@ -16,8 +16,4 @@ CREATE table  media (
   FOREIGN KEY (politicians_id) references politicians(id),
   word  varchar(400),
   posorneg varchar(400)
-<<<<<<< HEAD
 );
-=======
-);
->>>>>>> mergy

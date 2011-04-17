@@ -5,6 +5,11 @@ require 'json'
 
 conn = Mysql.new('localhost', 'root', 'kaiser', 'kaiser')
 
+# comands to clear database
+#conn.query("drop table politicians")
+#conn.query("drop table media")
+#mysql kaiser -u root -p < ../database/database.sql
+
 # convert the json text into a table text for mysql
 dirname = 'twitraw'
 
@@ -27,9 +32,9 @@ Dir.foreach(dirname) do |filename|
             location = conn.quote(tweet['location'])
         end
 
-        if text =~ /obama/
+        if text =~ /obama/i
             kw = 'obama'
-        elsif text =~ /bachmann/
+        elsif text =~ /bachmann/i
             kw = 'bachmann'
         end
 
@@ -38,6 +43,9 @@ Dir.foreach(dirname) do |filename|
                    "values (\"#{media}\", \"April 2011\", \"#{text}\", \"#{location}\", \"#{kw}\")")
     end
 end
+
+# dump the sql
+# mysqldump -u root -p > ../database/twitdump.sql
 
 # TODO, loading a file will be faster
 #stmt = "LOAD DATA LOCAL INFILE \"\" INTO TABLE kaiser"
