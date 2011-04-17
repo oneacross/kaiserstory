@@ -1,10 +1,9 @@
 <?php
 class PoliticiansController extends AppController {
-      var $helpers = array('Html','Form');
-      var $name = 'Politicians';
+    var $helpers = array('Html','Form');
 
-      function sentiment(){
-      	       $this->set('politicians', $this->Politician->find('all');
+      function sentiment($politician = null){
+	$this->set('politicians', $this->Politician->find('all'));
       }
 
 }
