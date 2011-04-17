@@ -43,7 +43,7 @@ p.top {font-size:30px;}
      <p class="name">Bachmann</p>
      <div id="emotions">
      <img src="http://images.politico.com/global/thumbnail/bachmann-50x50.jpg"><br>
-     <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=FC0505,17A317&chd=t:<?php echo $Bachmann['percentage']['positive']; echo","; echo $Bachmann['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
+     <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=17A317,FC0505&chd=t:<?php echo $Bachmann['percentage']['positive']; echo","; echo $Bachmann['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
      <br>
          <?php echo floor(($Bachmann['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
      	 <?php echo floor(($Bachmann['percentage']['negative']) * 10000 + .5) * .01;?> % negative<br/>
@@ -53,7 +53,7 @@ p.top {font-size:30px;}
      <div id="plusminus">
      	  <div id="positivewords" class="left"><b>Positive</b><br>
 	  <?php foreach ($Bachmann['words']['positive'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
-	  <div id="negativewords" class="left"><b>Negative</b><br>
+	  <div id="negativewords" class="right"><b>Negative</b><br>
 	  <?php foreach ($Bachmann['words']['negative'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
      </div>
 </div>
