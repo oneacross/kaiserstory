@@ -1,7 +1,7 @@
 #!/bin/bash
 
 kw=$1
-[ -z $kw ] && echo "please supply track keywords" && exit
+[ -z "$kw" ] && echo "please supply track keywords" && exit
 
 echo "track=$kw" > tracking
 
