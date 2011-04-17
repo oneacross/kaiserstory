@@ -17,9 +17,9 @@ p {font-size:50px;}
      <div id="emotions">
      <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=17A317,FC0505&chd=t:<?php echo $Obama['percentage']['positive']; echo","; echo $Obama['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
      <br>
-         <?php echo $Obama['percentage']['positive'];?> % positive<br/>
-     	 <?php echo $Obama['percentage']['positive'] ?> % negative<br/>
-     	 <?php echo $Obama['percentage']['neutral'] ?> % neutral
+         <?php echo floor(($Obama['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
+     	 <?php echo floor(($Obama['percentage']['negative']) * 10000 + .5) * .01; ?> % negative<br/>
+     	 <?php echo floor(($Obama['percentage']['neutral']) * 10000 + .5) * .01; ?> % neutral
      </div>
      <div id="plusminus">
      	  <div id="positivewords" class="left"><b>Positive</b><br>
@@ -34,9 +34,9 @@ p {font-size:50px;}
      <div id="emotions">
      <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=FC0505,17A317&chd=t:<?php echo $Bachmann['percentage']['positive']; echo","; echo $Bachmann['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
      <br>
-         <?php echo $Bachmann['percentage']['positive'];?> % positive<br/>
-     	 <?php echo $Bachmann['percentage']['positive'] ?> % negative<br/>
-     	 <?php echo $Bachmann['percentage']['neutral'] ?> % neutral
+         <?php echo floor(($Bachmann['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
+     	 <?php echo floor(($Bachmann['percentage']['negative']) * 10000 + .5) * .01;?> % negative<br/>
+     	 <?php echo floor(($Bachmann['percentage']['neutral']) * 10000 + .5) * .01;?> % neutral
      </div>
      <div id="plusminus">
      	  <div id="positivewords" class="left"><b>Positive</b><br>
