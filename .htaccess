@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
    Options +FollowSymLinks
    RewriteEngine on
-   RewriteBase /kaiserstory/
+   RewriteBase /~joseakle/kaiserstory/
    RewriteRule    ^$ app/webroot/    [L]
    RewriteRule    (.*) app/webroot/$1 [L]
 </IfModule>

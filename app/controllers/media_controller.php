@@ -1,7 +1,7 @@
 <?php
 class MediaController extends AppController {
-    function dashboard(){
-        $this->Media->process();
+  function dashboard(){
+    //$this->Media->process();
 
         $totalObama =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Obama')));
         $posObama =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Obama', 'Media.posorneg' => '0')));
@@ -18,18 +18,18 @@ class MediaController extends AppController {
                                                         'Media.posorneg' => 1),
                                     'group' => 'Media.word'));
 
-        $totalBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Bachmann')));
-        $posBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Bachmann', 'Media.posorneg' => '0')));
-        $negBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Bachmann', 'Media.posorneg' => '1')));
-        $neuBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'Bachmann', 'Media.posorneg' => '-1')));
+        $totalBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'bachmann')));
+        $posBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'bachmann', 'Media.posorneg' => '0')));
+        $negBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'bachmann', 'Media.posorneg' => '1')));
+        $neuBachmann =$this->Media->find('count',array('conditions' => array('Media.politician_name' => 'bachmann', 'Media.posorneg' => '-1')));
         $bachmannPosWords =$this->Media->find('all',array(
                                     'fields' => array('Media.word', 'COUNT(Media.word) AS n'),
-                                    'conditions' => array('Media.politician_name' => 'Bachmann',
+                                    'conditions' => array('Media.politician_name' => 'bachmann',
                                                         'Media.posorneg' => 0),
                                     'group' => 'Media.word'));
         $bachmannNegWords =$this->Media->find('all',array(
                                     'fields' => array('Media.word', 'COUNT(Media.word) AS n'),
-                                    'conditions' => array('Media.politician_name' => 'Bachmann',
+                                    'conditions' => array('Media.politician_name' => 'bachmann',
                                                         'Media.posorneg' => 1),
                                     'group' => 'Media.word'));
 
