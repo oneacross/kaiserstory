@@ -19,7 +19,8 @@ p {font-size:50px;}
      <br>
          <?php echo floor(($Obama['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
      	 <?php echo floor(($Obama['percentage']['negative']) * 10000 + .5) * .01; ?> % negative<br/>
-     	 <?php echo floor(($Obama['percentage']['neutral']) * 10000 + .5) * .01; ?> % neutral
+     	 <?php echo floor(($Obama['percentage']['neutral']) * 10000 + .5) * .01; ?> % neutral<br/>
+	 <?php echo $Obama['total'] ;?> total mentions<br/>
      </div>
      <div id="plusminus">
      	  <div id="positivewords" class="left"><b>Positive</b><br>
@@ -36,7 +37,8 @@ p {font-size:50px;}
      <br>
          <?php echo floor(($Bachmann['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
      	 <?php echo floor(($Bachmann['percentage']['negative']) * 10000 + .5) * .01;?> % negative<br/>
-     	 <?php echo floor(($Bachmann['percentage']['neutral']) * 10000 + .5) * .01;?> % neutral
+     	 <?php echo floor(($Bachmann['percentage']['neutral']) * 10000 + .5) * .01;?> % neutral<br/>
+	 <?php echo $Bachmann['total'] ;?> total mentions<br/>
      </div>
      <div id="plusminus">
      	  <div id="positivewords" class="left"><b>Positive</b><br>

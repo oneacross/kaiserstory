@@ -44,7 +44,8 @@ class MediaController extends AppController {
             $obamaNegWordsResult[$obamaNegWords[$i]['Media']['word']] = $obamaNegWords[$i][0]['n'];
         }
 
-        $Obama=array('percentage'=>
+        $Obama=array('total' => $totalObama,
+		     'percentage'=>
                                     array('positive'=> $totalObama==0? 0 : $posObama/$totalObama,
                                           'negative'=> $totalObama==0? 0 : $negObama/$totalObama,
                                           'neutral'=> $totalObama==0? 0 : $neuObama/$totalObama
@@ -65,7 +66,8 @@ class MediaController extends AppController {
             $bachmannNegWordsResult[$bachmannNegWords[$i]['Media']['word']] = $bachmannNegWords[$i][0]['n'];
         }
 
-        $Bachmann=array('percentage'=>
+        $Bachmann=array('total' => $totalBachmann,
+			'percentage'=>
                                     array('positive'=> $totalBachmann==0? 0 : $posBachmann/$totalBachmann,
                                           'negative'=> $totalBachmann==0? 0 : $negBachmann/$totalBachmann,
                                           'neutral'=> $totalBachmann==0? 0 : $neuBachmann/$totalBachmann
