@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'mysql'
+<<<<<<< HEAD
 require 'json'
 
 conn = Mysql.new('localhost', 'mmendell', 'kaiser', 'kaiser')
@@ -30,3 +31,7 @@ File.open(filename).each { |line|
 #stmt = "LOAD DATA LOCAL INFILE \"\" INTO TABLE kaiser"
 
 conn.close()
+=======
+
+conn = Mysql.new('localhost', 'mmendell', 'kaiser')
+>>>>>>> mergy
