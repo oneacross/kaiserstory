@@ -15,7 +15,7 @@ p.top {font-size:30px;}
 <div id="content" >
 <div align="center">
 <?php echo $html->image(feelvox); ?><br>
-<p class="top">Candidates watch out! <br>Do you know what we think about you?<br> Feelvox knows.</p>
+<p class="top">Candidates, find out what people think about you.<br> Feelvox knows.</p>
 <iframe src="http://www.facebook.com/plugins/like.php?href=www.feelvox.com&amp;layout=button_count&amp;show_faces=false&amp;width=100&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:21px;" allowTransparency="true"></iframe>
 <a href="http://twitter.com/share" class="twitter-share-button" data-text="Politicians watch out! Do you know what we think about you? Made at #swsj #techbasv" data-count="none" data-via="feelvox">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </div>
