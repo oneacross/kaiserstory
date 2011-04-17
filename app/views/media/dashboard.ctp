@@ -4,23 +4,27 @@
 #left {float:left;}
 #right {float:right;}
 
+.left {float:left;}
+.right {float:right;}
+
 p {font-size:50px;}
 </style>
 
 <div id="content" >
+<div align="center"><?php echo $html->image(feelvox); ?></div>
 <div id="left" align="center">
      <p class="name">Obama</p>
      <div id="emotions">
-     <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=FC0505,17A317&chd=t:<?php echo $Obama['percentage']['positive']; echo","; echo $Obama['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
+     <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=17A317,FC0505&chd=t:<?php echo $Obama['percentage']['positive']; echo","; echo $Obama['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
      <br>
          <?php echo $Obama['percentage']['positive'];?> % positive<br/>
      	 <?php echo $Obama['percentage']['positive'] ?> % negative<br/>
      	 <?php echo $Obama['percentage']['neutral'] ?> % neutral
      </div>
      <div id="plusminus">
-     	  <div id="positivewords" class="left">+
+     	  <div id="positivewords" class="left"><b>Positive</b><br>
 	  <?php foreach ($Obama['words']['positive'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
-	  <div id="negativewords" class="left">-
+	  <div id="negativewords" class="right"><b>Negative</b><br>
 	  <?php foreach ($Obama['words']['negative'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
      </div>
 </div>
@@ -35,9 +39,9 @@ p {font-size:50px;}
      	 <?php echo $Bachmann['percentage']['neutral'] ?> % neutral
      </div>
      <div id="plusminus">
-     	  <div id="positivewords" class="left">+
+     	  <div id="positivewords" class="left"><b>Positive</b><br>
 	  <?php foreach ($Bachmann['words']['positive'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
-	  <div id="negativewords" class="left">-
+	  <div id="negativewords" class="left"><b>Negative</b><br>
 	  <?php foreach ($Bachmann['words']['negative'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
      </div>
 </div>
