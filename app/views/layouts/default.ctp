@@ -1,32 +1,21 @@
-User:
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title>
+		<?php __('CakePHP: the rapid development php framework:'); ?>
+		<?php echo $title_for_layout; ?>
+	</title>
+	<?php
+		echo $this->Html->meta('icon');
 
-<div id="top">
-     <div id="search">
-     <form action="/search"></form>
-     </div>
-</div>
+		echo $this->Html->css('cake.generic');
 
-<div id="left">
-     <div id="mentions">
-     # of Mentions:
-     
-     </div>
-     <div id="issues"></div>
-</div>
-
-<div id="middle">
-     <div id="emotions">
-     % positive<br/>
-     % negative<br/>
-     % neutral
-     </div>
-     <div id="sources"></div>
-</div>
-
-<div id="right">
-     <div id="plusminus">
-     	  <div id="positivewords">+ </div>
-	  <div id="negativewords">- </div>
-     </div>
-     <div id="locations"></div>
-</div>
+		echo $scripts_for_layout;
+	?>
+</head>
+<body>
+<?php echo $this->Session->flash(); ?>
+<?php echo $content_for_layout; ?>
+</body>
+</html>
