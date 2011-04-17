@@ -19,7 +19,7 @@ p.top {font-size:30px;}
 <iframe src="http://www.facebook.com/plugins/like.php?href=www.feelvox.com&amp;layout=button_count&amp;show_faces=false&amp;width=120&amp;action=like&amp;font&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:120px; height:21px;" allowTransparency="true"></iframe>
 <a href="http://twitter.com/share" class="twitter-share-button" data-text="Politicians watch out! Do you know what we think about you? Made at #swsj #techbasv" data-count="none" data-via="feelvox">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 </div>
-<div style="width:800; margin-left:20%;">
+<div style="width:1000; margin-left:15%;">
 <div id="left" align="center">
      <p class="name">Obama</p>
      <div id="emotions">
@@ -28,7 +28,6 @@ p.top {font-size:30px;}
      <br>
          <?php echo floor(($Obama['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
      	 <?php echo floor(($Obama['percentage']['negative']) * 10000 + .5) * .01; ?> % negative<br/>
-     	 <?php echo floor(($Obama['percentage']['neutral']) * 10000 + .5) * .01; ?> % neutral<br/>
 	 <?php echo $Obama['total'] ;?> total mentions<br/>
      </div>
      <div id="plusminus">
@@ -38,16 +37,15 @@ p.top {font-size:30px;}
 	  <?php foreach ($Obama['words']['negative'] as $word=>$n): echo $word." ".$n."<br>"; endforeach;?> </div>
      </div>
 </div>
-
+<div class="left" align="center"><br/><br/><br/><img src="http://chart.apis.google.com/chart?chs=314x150&cht=gm&chd=t:70"></div>
 <div id="right" align="center">
      <p class="name">Bachmann</p>
      <div id="emotions">
-     <img src="http://images.politico.com/global/thumbnail/bachmann-50x50.jpg"><br>
+     <img src="http://images.politico.com/global/thumbnail/bachmann-50x50.jpg" height="96" width="96"><br>
      <img src="http://chart.apis.google.com/chart?chs=300x150&cht=p3&chco=17A317,FC0505&chd=t:<?php echo $Bachmann['percentage']['positive']; echo","; echo $Bachmann['percentage']['negative']?>&chdl=Positive|Negative&chp=0.9&chma=|2" width="300" height="150" alt="" />
      <br>
          <?php echo floor(($Bachmann['percentage']['positive']) * 10000 + .5) * .01;?> % positive<br/>
      	 <?php echo floor(($Bachmann['percentage']['negative']) * 10000 + .5) * .01;?> % negative<br/>
-     	 <?php echo floor(($Bachmann['percentage']['neutral']) * 10000 + .5) * .01;?> % neutral<br/>
 	 <?php echo $Bachmann['total'] ;?> total mentions<br/>
      </div>
      <div id="plusminus">
